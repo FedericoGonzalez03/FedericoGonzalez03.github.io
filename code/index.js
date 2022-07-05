@@ -10,7 +10,7 @@ function inicio() {
 function listar() {
 
     let container = document.getElementById('gridCont');
-    container.innerHTML = '';
+    container.innerHTML = 'Buscando';
     fetch('./apis/listar.php')
         .then(res => res.json())
         .then(datas => {
