@@ -2,7 +2,7 @@
 
 try {
 
-    $conex = new PDO("mysql:host=localhost;port=3306;dbname=distribuidoreswm", 'root', '');
+    $conex = new PDO("mysql:host=167.58.50.146;port=3306;dbname=distribuidoreswm", 'root', '');
     $conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conex->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
