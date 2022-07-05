@@ -9,8 +9,7 @@ function inicio() {
 
 function listar() {
 
-    let container = document.getElementById('gridCont');
-    container.innerHTML = 'Buscando';
+    vaciar();
     fetch('./apis/listar.php')
         .then(res => res.json())
         .then(datas => {
@@ -66,4 +65,8 @@ if(confirm('¿Cerrar sesión?')){
         }
     })
 }
+}
+function vaciar(){
+    let container = document.getElementById('gridCont');
+    container.innerHTML = 'Buscando';
 }
