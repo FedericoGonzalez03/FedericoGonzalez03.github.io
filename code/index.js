@@ -17,6 +17,22 @@ function listar() {
             datas.map(elem => {
                 let busqueda = document.getElementById('buscar').value;
                 if (elem.nombre.toLowerCase().indexOf(busqueda.toLowerCase()) !== -1) {
+                    if(container.innerHTML == ''){
+                        container.setAttribute('style', '');
+                        container.innerHTML = `
+                            <div class="card text-center">
+                                <img class="card-img-top" src="${elem.imagen}" alt="${elem.nombre}" style="object-fit:cover;height:100px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">${elem.nombre}</h5>
+                                    <span id="idProd" class="visually-hidden">${elem.id}</span>
+                                    <span class="text-primary" style="font-weight:800;">$${elem.precio}</span>
+                                    <p class="card-text" style="font-size:14px;">${elem.descripcion}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="agregarCarrito button" class="btn btn-success">Agregar al Carrito</button>
+                                </div>
+                            </div>`;
+                    }else{
                     container.setAttribute('style', '');
                     container.innerHTML += `
                         <div class="card text-center">
@@ -31,6 +47,7 @@ function listar() {
                                 <button type="agregarCarrito button" class="btn btn-success">Agregar al Carrito</button>
                             </div>
                         </div>`;
+                    }
                 }
 
             })
@@ -68,5 +85,5 @@ if(confirm('¿Cerrar sesión?')){
 }
 function vaciar(){
     let container = document.getElementById('gridCont');
-    container.innerHTML = 'Buscando';
+    container.innerHTML = '';
 }
